@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  workDuration: 0.1
+  workDuration: 1
   amountToTake: 1
 --- !u!114 &114441135198502876
 MonoBehaviour:
@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  workDuration: 0.2
+  workDuration: 1
