@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4353944754577930}
   - component: {fileID: 23518011021669000}
   - component: {fileID: 102268586313298354}
-  - component: {fileID: 114076505020344378}
+  - component: {fileID: 114738209699333600}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -155,19 +155,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278255615
---- !u!114 &114076505020344378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1324193714607232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e9fba7fdffb4cd19d0f46598ab3713, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textField: {fileID: 102268586313298354}
-  minTimeToShowText: 0.5
 --- !u!114 &114489372051601064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,11 +167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlan: []
-  availableActions: []
+  availableActions:
+  - {fileID: 0}
+  - {fileID: 0}
   regressiveSearch: 0
   backpack: {fileID: 114731123126619688}
-  moveSpeed: 1
-  textBubble: {fileID: 0}
+  moveSpeed: 2
+  textBubble: {fileID: 114738209699333600}
+  isAlive: 1
 --- !u!114 &114731123126619688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +187,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel: 0
+--- !u!114 &114738209699333600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324193714607232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a02dede5ab925844aba7e9c03e053de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 102268586313298354}
+  minTimeToShowText: 0.5
 --- !u!212 &212721039578477974
 SpriteRenderer:
   m_ObjectHideFlags: 1

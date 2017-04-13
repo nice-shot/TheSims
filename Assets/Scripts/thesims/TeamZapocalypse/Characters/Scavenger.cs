@@ -6,6 +6,7 @@ public class Scavenger : Character {
 
     protected override void Awake() {
         base.Awake();
+        isAlive = true;
         var goal = new Goal();
         goal["shieldEnergy"] = new Condition(CompareType.MoreThan, 0);
         worldGoal[this] = goal;

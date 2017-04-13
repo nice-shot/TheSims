@@ -15,6 +15,7 @@ public abstract class Character : GoapAgent {
     [SerializeField] float moveSpeed = 1;
     [SerializeField] TextBubble textBubble;
 
+    public bool isAlive;
     private readonly State state = new State();
 
     protected override void Awake() {
