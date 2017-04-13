@@ -7,13 +7,13 @@ public class EatBrain : GoapAction {
     private List<IStateful> targets = new List<IStateful>();
 
     protected void Awake() {
+        AddTargetPrecondition("isSafe", CompareType.Equal, false);
         AddEffect("brains", ModificationType.Add, 1);
     }
 
     protected void Start() {
         var allCharacters = GetTargets<Character>();
         foreach (Character c in allCharacters) {
-            Debug.Log(c);
             if (c.isAlive) {
                 targets.Add(c);
             }

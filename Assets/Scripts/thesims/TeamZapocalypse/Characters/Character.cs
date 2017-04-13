@@ -26,6 +26,8 @@ public abstract class Character : GoapAgent {
                 continue;
             state[item.ToString()] = new StateValue(backpack.items[item]);
         }
+
+        state["isSafe"] = new StateValue(true);
 //        state["hasTool"] = new StateValue(backpack.tool != null);
     }
 
@@ -33,6 +35,10 @@ public abstract class Character : GoapAgent {
         if (backpack == null) {
             backpack = gameObject.GetComponent<Container>();
         }
+    }
+
+    protected void SetIsSafe(bool isSafe) {
+        state["isSafe"].value = isSafe;
     }
 
     public override State GetState() {
@@ -44,6 +50,13 @@ public abstract class Character : GoapAgent {
 //        state["hasTool"].value = backpack.tool != null;
         state["x"] = new StateValue(transform.position.x);
         state["y"] = new StateValue(transform.position.y);
+
+//        if (isAlive) {
+//            var shelter = GetComponent<Shelter>();
+//            if (shelter.shield.activeInHierarchy) {
+//                
+//            }
+//        }
 
         return state;
     }

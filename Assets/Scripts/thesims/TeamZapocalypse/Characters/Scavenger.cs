@@ -1,4 +1,5 @@
-﻿using Ai.Goap;
+﻿using UnityEngine;
+using Ai.Goap;
 
 namespace TeamZapocalypse {
 public class Scavenger : Character {
@@ -14,6 +15,20 @@ public class Scavenger : Character {
 
     public override WorldGoal CreateGoalState() {
         return worldGoal;
+    }
+
+    void OnTriggerExit2D(Collider2D collider) {
+        if (collider.gameObject.name == "Shelter") {
+            Debug.Log("You are not safe!");
+            SetIsSafe(false);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collider) {
+        if (collider.gameObject.name == "Shelter") {
+            Debug.Log("You are safe!");
+            SetIsSafe(true);
+        }
     }
 }
 }
