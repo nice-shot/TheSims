@@ -10,6 +10,7 @@ public enum Item {
     Ore,
     NewTool,
     Branches,
+    Animal
 }
 
 /// <summary>
@@ -39,6 +40,8 @@ public class Container : MonoBehaviour {
     protected int ore;
     [SerializeField]
     protected int branches;
+    [SerializeField]
+    protected int animals;
 
     protected void Awake() {
         // Make sure all new items are defined in the container.
