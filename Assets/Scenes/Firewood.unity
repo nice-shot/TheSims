@@ -445,18 +445,13 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1402324191}
     m_Modifications:
-    - target: {fileID: 114076634789814148, guid: 6665f6de846b74130a78d176465b1c99,
-        type: 2}
-      propertyPath: availableActions.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4212267382197300, guid: 6665f6de846b74130a78d176465b1c99, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 4212267382197300, guid: 6665f6de846b74130a78d176465b1c99, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 4212267382197300, guid: 6665f6de846b74130a78d176465b1c99, type: 2}
       propertyPath: m_LocalPosition.z
