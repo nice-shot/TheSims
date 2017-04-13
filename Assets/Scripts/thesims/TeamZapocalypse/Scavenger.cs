@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Ai.Goap;
 
-public class Scavenger : MonoBehaviour {
+namespace TeamZapocalypse {
+public class Scavenger : Character {
+    private readonly WorldGoal worldGoal = new WorldGoal();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    protected override void Awake() {
+        base.Awake();
+        var goal = new Goal();
+        goal["shieldEnergy"] = new Condition(CompareType.MoreThan, 0);
+        worldGoal[this] = goal;
+    }
+
+    public override WorldGoal CreateGoalState() {
+        return worldGoal;
+    }
+}
 }
