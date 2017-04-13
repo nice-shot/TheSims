@@ -13,6 +13,7 @@ public class SacrificeAction : GoapAction {
     protected virtual void Awake() {
         AddPrecondition(resource.ToString(), CompareType.MoreThanOrEqual, amountToSacrifice);
         AddEffect("sacrifice", ModificationType.Set, true);
+        AddEffect(resource.ToString(), ModificationType.Add, -amountToSacrifice);
     }
 
     protected void Start() {
