@@ -17,10 +17,11 @@ public class Player : MonoBehaviour, IStateful {
 
     private Rigidbody2D body;
     private bool inShelter;
+    private bool isSafe;
 
     public State GetState() {
         var state = new State();
-        state["isSafe"] = new StateValue(false);
+        state["isSafe"] = new StateValue(isSafe);
         return state;
     }
 
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour, IStateful {
     void OnTriggerExit2D(Collider2D collider) {
         if (collider.gameObject.name == "Shelter") {
             inShelter = false;
+            isSafe = false;
         }
     }
 
@@ -61,6 +63,12 @@ public class Player : MonoBehaviour, IStateful {
             inShelter = true;
             currentAmmo = maxAmmo;
             textBubble.SetText("Reloaded!");
+            var shelter = collider.gameObject.GetComponent<Shelter>();
+            if (shelter.shield.activeInHierarchy) {
+                isSafe = true;
+            } else {
+                isSafe = false;
+            }
         }
     }
 
