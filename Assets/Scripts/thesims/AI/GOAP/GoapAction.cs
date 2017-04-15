@@ -40,6 +40,10 @@ public abstract class GoapAction : MonoBehaviour {
     }
 
     public virtual bool CanDoNow(GoapAgent agent, IStateful target) {
+        // We don't know how. We just know it works...
+        if (target.ToString() == "null" || target == null) {
+            return false;
+        }
         var worldState = WorldState.Borrow();
         worldState[agent] = agent.GetState();
         worldState[target] = target.GetState();
