@@ -12,9 +12,10 @@ public class Player : MonoBehaviour, IStateful {
     public GameObject bulletPrefab;
 
     public float speed = 2f;
-    public int ammo = 5;
+    public int maxAmmo = 5;
+    public int currentAmmo = 5;
     public float bulletSpeed = 5f;
-    public float bulletLifespan = 0.6f; 
+    public float bulletLifespan = 0.6f;
 
     private Rigidbody2D body;
 
