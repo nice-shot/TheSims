@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ai.Goap;
 
+namespace TeamZapocalypse {
 public class Player : MonoBehaviour, IStateful {
-//    public KeyCode upKey = KeyCode.UpArrow;
-//    public KeyCode downKey = KeyCode.DownArrow;
-//    public KeyCode leftKey = KeyCode.LeftArrow;
-//    public KeyCode rightKey = KeyCode.RightArrow;
     public KeyCode shootKey = KeyCode.Mouse0;
     public GameObject bulletPrefab;
+    [SerializeField] TextBubble textBubble;
 
     public float speed = 2f;
     public int maxAmmo = 5;
@@ -26,6 +24,7 @@ public class Player : MonoBehaviour, IStateful {
 
     void Awake() {
         body = GetComponent<Rigidbody2D>();
+        textBubble.SetText("Player");
     }
 
     void Update() {
@@ -59,12 +58,22 @@ public class Player : MonoBehaviour, IStateful {
         if (collider.name == "Shelter") {
             inShelter = true;
             currentAmmo = maxAmmo;
+            textBubble.SetText("Reloaded!");
         }
     }
 
     private bool CanShoot() {
-        return (!inShelter && currentAmmo > 0);
+        if (!inShelter && currentAmmo > 0) {
+            textBubble.SetText("Die Zombie!");
+            return true;
+        } else if (inShelter) {
+            textBubble.SetText("Can't shoot in Shelter!");
+        } else {
+            textBubble.SetText("Out of Ammo!");
+        }
+        return false;
     }
 
 
+}
 }
