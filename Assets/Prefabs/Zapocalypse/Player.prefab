@@ -117,13 +117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abd33863dd6ecb46beec6586de8e79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upKey: 273
-  downKey: 274
-  leftKey: 276
-  rightKey: 275
   shootKey: 323
+  bulletPrefab: {fileID: 1641097805689122, guid: 3c438e74c2300fb43986c879a8f8b3c5,
+    type: 2}
   speed: 2
-  ammo: 5
+  maxAmmo: 5
+  currentAmmo: 5
+  bulletSpeed: 5
+  bulletLifespan: 0.6
 --- !u!212 &212439071437169338
 SpriteRenderer:
   m_ObjectHideFlags: 1
