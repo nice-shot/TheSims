@@ -169,6 +169,7 @@ MonoBehaviour:
   currentPlan: []
   availableActions:
   - {fileID: 0}
+  - {fileID: 0}
   regressiveSearch: 0
   backpack: {fileID: 114778074094399206}
   moveSpeed: 1

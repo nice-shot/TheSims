@@ -27,9 +27,13 @@ public class Scavenger : Character {
     }
 
     void OnTriggerStay2D(Collider2D collider) {
-        if (collider.gameObject.name == "Shelter") {
-            Debug.Log("You are safe!");
-            SetIsSafe(true);
+        if (collider.name == "Shelter") {
+            var shelter = collider.gameObject.GetComponent<Shelter>();
+            if (shelter.shield.activeInHierarchy) {
+                Debug.Log("You are safe!");
+                SetIsSafe(true);
+            }
+
         }
     }
 }

@@ -27,7 +27,7 @@ public abstract class Character : GoapAgent {
             state[item.ToString()] = new StateValue(backpack.items[item]);
         }
 
-        state["isSafe"] = new StateValue(true);
+        state["isSafe"] = new StateValue(false);
 //        state["hasTool"] = new StateValue(backpack.tool != null);
     }
 
