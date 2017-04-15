@@ -132,7 +132,16 @@ public abstract class GoapAgent : MonoBehaviour, IStateful, ISearchContext {
             fsm.PushState(IdleState);
             return;
         }
-            
+
+        // For some reason just comparing nulls here doesn't really work! WTF C#?!
+        if (action.target.ToString() == "null") {
+            // Target doesn't exist anymore
+            fsm.PopState();
+            fsm.PopState();
+            fsm.PushState(IdleState);
+            return;
+        }
+
         if (!action.actionData.CanDoNow(this, action.target)) {
             // Target doesn't match preconditions anymore.
             fsm.PopState();
@@ -186,16 +195,6 @@ public abstract class GoapAgent : MonoBehaviour, IStateful, ISearchContext {
                 }
             } else {
                 // TODO !!!!!!!!!!!!!!!! Try to check if the action is still possible !!!!!!!!!!!!!!!!!!
-//                if (action.actionData.CanDoNow(this, action.target)) {
-//                    // We need to move there first.
-//                    // Push moveTo state.
-//                    fsm.PushState(MoveToState);
-//                } else {
-//                    // Target doesn't match preconditions anymore.
-//                    fsm.PopState();
-//                    fsm.PushState(IdleState);
-//                    PlanAborted(action);                    
-//                }
                 // We need to move there first.
                 // Push moveTo state.
                 fsm.PushState(MoveToState);
