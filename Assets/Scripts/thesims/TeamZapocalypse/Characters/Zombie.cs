@@ -9,6 +9,7 @@ public class Zombie : Character {
         isAlive = false;
         var goal = new Goal();
         goal["brains"] = new Condition(CompareType.MoreThan, 0);
+        goal["wander"] = new Condition(CompareType.Equal, true);
         worldGoal[this] = goal;
     }
 
