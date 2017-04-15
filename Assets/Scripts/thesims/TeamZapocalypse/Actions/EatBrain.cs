@@ -11,8 +11,6 @@ public class EatBrain : GoapAction {
 //        AddTargetPrecondition("isAlive", CompareType.Equal, true);
         AddEffect("brains", ModificationType.Add, 1);
         AddEffect("move", ModificationType.Set, true);
-//        AddTargetEffect("isAlive", ModificationType.Set, false);
-        AddTargetEffect("isSafe", ModificationType.Set, true);
     }
 
 //    protected void Start() {
