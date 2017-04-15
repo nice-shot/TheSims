@@ -19,7 +19,9 @@ public class Player : MonoBehaviour, IStateful {
     private bool inShelter;
 
     public State GetState() {
-        return null;
+        var state = new State();
+        state["isSafe"] = new StateValue(false);
+        return state;
     }
 
     void Awake() {

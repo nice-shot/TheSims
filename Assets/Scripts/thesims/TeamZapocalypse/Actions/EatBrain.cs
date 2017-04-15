@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Ai.Goap;
+using UnityEngine.SceneManagement;
 
 namespace TeamZapocalypse {
 public class EatBrain : GoapAction {
@@ -29,24 +30,27 @@ public class EatBrain : GoapAction {
                 targets.Add(c);
             }
         }
+        targets.Add(GetTargets<Player>()[0]);
         return targets;
     }
 
     protected override bool OnDone(GoapAgent agent, WithContext context) {
-        var target = (Scavenger)context.target;
+        var target = (MonoBehaviour)context.target;
         var targetPos = target.transform.position;
-        var newZombie = (GameObject)Instantiate(agent.gameObject);
-        newZombie.transform.position = targetPos;
-        newZombie.transform.parent = agent.gameObject.transform.parent;
-        target.isAlive = false;
-        var returnVal = base.OnDone(agent, context);
-        if (returnVal) {
-            Destroy(target.gameObject);
-//            Destroy(gameObject);
-//            target.gameObject.SetActive(false);
+        if (target.gameObject.name == "Player") {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        } else {
+            var newZombie = (GameObject)Instantiate(agent.gameObject);
+            newZombie.transform.position = targetPos;
+            newZombie.transform.parent = agent.gameObject.transform.parent;
+            var returnVal = base.OnDone(agent, context);
+            if (returnVal) {
+                Destroy(target.gameObject);
+            }
+            return returnVal;
         }
-        return returnVal;
-
+        return base.OnDone(agent, context);
     }
 }
 }
