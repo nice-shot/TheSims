@@ -22,13 +22,5 @@ public class WanderAround : GoapAction {
         int selected = Random.Range(0, targets.Count);
         return new List<IStateful> { targets[selected] };
     }
-
-//    protected override bool OnDone(GoapAgent agent, WithContext context) {
-//        var backpack = agent.GetComponent<Container>();
-//        var shelter = (Shelter)context.target;
-//        shelter.AddFuel(backpack.items[resource]);
-//        backpack.items[resource] = 0;
-//        return base.OnDone(agent, context);
-//    }
 }
 }
