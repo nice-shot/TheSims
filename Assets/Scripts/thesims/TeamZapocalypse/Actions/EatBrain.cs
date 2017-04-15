@@ -37,8 +37,9 @@ public class EatBrain : GoapAction {
     protected override bool OnDone(GoapAgent agent, WithContext context) {
         var target = (Scavenger)context.target;
         var targetPos = target.transform.position;
-//        var newZombie = (GameObject)Instantiate(gameObject);
-//        newZombie.transform.position = targetPos;
+        var newZombie = (GameObject)Instantiate(agent.gameObject);
+        newZombie.transform.position = targetPos;
+        newZombie.transform.parent = agent.gameObject.transform.parent;
         target.isAlive = false;
         var returnVal = base.OnDone(agent, context);
         if (returnVal) {
