@@ -3,26 +3,24 @@ using Ai.Goap;
 
 namespace TeamZapocalypse {
 public class WanderAround : GoapAction {
-    private Item resource = Item.Fuel;
-    private int energyFromFuel = 10;
     private List<IStateful> targets;
 
     protected void Awake() {
         AddEffect("wander", ModificationType.Set, true);
     }
 
-//    protected void Start() {
-//        targets = GetTargets<Shelter>();
-//    }
+    protected void Start() {
+        targets = GetTargets<WanderArea>();
+    }
 
     public override bool RequiresInRange() {
-        return false;
+        return true;
     }
-//
-//    public override List<IStateful> GetAllTargets(GoapAgent agent) {
-//        return targets;
-//    }
-//
+
+    public override List<IStateful> GetAllTargets(GoapAgent agent) {
+        return targets;
+    }
+
 //    protected override bool OnDone(GoapAgent agent, WithContext context) {
 //        var backpack = agent.GetComponent<Container>();
 //        var shelter = (Shelter)context.target;

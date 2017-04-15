@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 0
-  workDuration: 5
+  workDuration: 0.2
 --- !u!114 &114411164173195648
 MonoBehaviour:
   m_ObjectHideFlags: 1
