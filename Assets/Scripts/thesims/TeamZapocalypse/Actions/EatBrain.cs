@@ -9,6 +9,7 @@ public class EatBrain : GoapAction {
     protected void Awake() {
         AddTargetPrecondition("isSafe", CompareType.Equal, false);
         AddEffect("brains", ModificationType.Add, 1);
+        AddEffect("move", ModificationType.Set, true);
     }
 
     protected void Start() {

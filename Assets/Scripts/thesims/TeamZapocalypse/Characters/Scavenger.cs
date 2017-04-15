@@ -10,6 +10,8 @@ public class Scavenger : Character {
         isAlive = true;
         var goal = new Goal();
         goal["shieldEnergy"] = new Condition(CompareType.MoreThan, 0);
+//        goal["health"] = new Condition(CompareType.MoreThan
+//        goal["safety"] = new Condition(CompareType.Equal, true);
         worldGoal[this] = goal;
     }
 

@@ -6,7 +6,7 @@ public class WanderAround : GoapAction {
     private List<IStateful> targets;
 
     protected void Awake() {
-        AddEffect("wander", ModificationType.Set, true);
+        AddEffect("move", ModificationType.Set, true);
     }
 
     protected void Start() {
