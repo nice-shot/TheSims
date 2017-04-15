@@ -99,9 +99,12 @@ public abstract class Character : GoapAgent {
         var target = nextAction.target as Component;
         // NOTE: We must cast to Vector2, otherwise we'll compare the Z coordinate
         //       which does not have to match!
-        var position = (Vector2)target.transform.position;
+        var position = target.transform.position;
+        // Keep Z position to not get below background
+        position.z = transform.position.z;
+
         // TODO: Move by setting the velocity of a rigid body to allow collisions.
-        transform.position = Vector2.MoveTowards(transform.position, position, step);
+        transform.position = Vector3.MoveTowards(transform.position, position, step);
 
         if (position.Approximately(transform.position)) {
             // We are at the target location, we are done.

@@ -18,6 +18,7 @@ public class Player : MonoBehaviour, IStateful {
     public float bulletLifespan = 0.6f;
 
     private Rigidbody2D body;
+    private bool inShelter;
 
     public State GetState() {
         return null;
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour, IStateful {
         body.velocity = move * speed;
 
         if (Input.GetKeyDown(shootKey) && CanShoot()) {
-            Debug.Log("Created Bullet!");
+            currentAmmo--;
             var bullet = (GameObject)Instantiate(
                 bulletPrefab,
                 gameObject.transform
@@ -48,8 +49,21 @@ public class Player : MonoBehaviour, IStateful {
         }
     }
 
+    void OnTriggerExit2D(Collider2D collider) {
+        if (collider.gameObject.name == "Shelter") {
+            inShelter = false;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collider) {
+        if (collider.name == "Shelter") {
+            inShelter = true;
+            currentAmmo = maxAmmo;
+        }
+    }
+
     private bool CanShoot() {
-        return true;
+        return (!inShelter && currentAmmo > 0);
     }
 
 
