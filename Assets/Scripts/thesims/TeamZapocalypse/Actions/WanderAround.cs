@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Ai.Goap;
+using UnityEngine;
 
 namespace TeamZapocalypse {
 public class WanderAround : GoapAction {
@@ -18,7 +19,8 @@ public class WanderAround : GoapAction {
     }
 
     public override List<IStateful> GetAllTargets(GoapAgent agent) {
-        return targets;
+        int selected = Random.Range(0, targets.Count);
+        return new List<IStateful> { targets[selected] };
     }
 
 //    protected override bool OnDone(GoapAgent agent, WithContext context) {
