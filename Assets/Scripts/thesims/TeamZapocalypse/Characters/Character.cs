@@ -28,6 +28,7 @@ public abstract class Character : GoapAgent {
         }
 
         state["isSafe"] = new StateValue(false);
+        state["isAlive"] = new StateValue(true);
 //        state["hasTool"] = new StateValue(backpack.tool != null);
     }
 
