@@ -132,6 +132,14 @@ public abstract class GoapAgent : MonoBehaviour, IStateful, ISearchContext {
             fsm.PushState(IdleState);
             return;
         }
+            
+        if (!action.actionData.CanDoNow(this, action.target)) {
+            // Target doesn't match preconditions anymore.
+            fsm.PopState();
+            fsm.PushState(IdleState);
+            PlanAborted(action);
+            return;
+        }
 
         // Get the agent to move itself.
         if (MoveAgent(action)) {
@@ -177,6 +185,17 @@ public abstract class GoapAgent : MonoBehaviour, IStateful, ISearchContext {
                     PlanAborted(action);
                 }
             } else {
+                // TODO !!!!!!!!!!!!!!!! Try to check if the action is still possible !!!!!!!!!!!!!!!!!!
+//                if (action.actionData.CanDoNow(this, action.target)) {
+//                    // We need to move there first.
+//                    // Push moveTo state.
+//                    fsm.PushState(MoveToState);
+//                } else {
+//                    // Target doesn't match preconditions anymore.
+//                    fsm.PopState();
+//                    fsm.PushState(IdleState);
+//                    PlanAborted(action);                    
+//                }
                 // We need to move there first.
                 // Push moveTo state.
                 fsm.PushState(MoveToState);

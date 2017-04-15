@@ -39,7 +39,7 @@ public abstract class GoapAction : MonoBehaviour {
         return true;
     }
 
-    protected virtual bool CanDoNow(GoapAgent agent, IStateful target) {
+    public virtual bool CanDoNow(GoapAgent agent, IStateful target) {
         var worldState = WorldState.Borrow();
         worldState[agent] = agent.GetState();
         worldState[target] = target.GetState();
