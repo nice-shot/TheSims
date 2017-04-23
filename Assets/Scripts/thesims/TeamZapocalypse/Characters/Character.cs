@@ -114,5 +114,23 @@ public abstract class Character : GoapAgent {
         }
         return false;
     }
+
+    void OnTriggerExit2D(Collider2D collider) {
+        if (collider.gameObject.name == "Shelter") {
+            Debug.Log(gameObject.name + " is not safe");
+            SetIsSafe(false);
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collider) {
+        if (collider.name == "Shelter") {
+            var shelter = collider.gameObject.GetComponent<Shelter>();
+            if (shelter.shield.activeInHierarchy) {
+                Debug.Log(gameObject.name + " is safe");
+                SetIsSafe(true);
+            }
+
+        }
+    }
 }
 }
