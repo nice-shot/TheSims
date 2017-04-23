@@ -15,16 +15,12 @@ public class ShootZombie : GoapAction {
         AddEffect("killCount", ModificationType.Add, 1);
     }
 
-    protected void Start() {
-        targets = GetTargets<Zombie>();
-    }
-
     public override bool RequiresInRange() {
         return true;
     }
 
     public override List<IStateful> GetAllTargets(GoapAgent agent) {
-        return targets;
+        return GetTargets<Zombie>();
     }
 
     protected override bool OnDone(GoapAgent agent, WithContext context) {

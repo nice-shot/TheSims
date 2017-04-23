@@ -259,7 +259,7 @@ public abstract class GoapAction : MonoBehaviour {
             }
             // Calculate travel cost.
             var travelCost = 0f;
-            if (actionData.RequiresInRange()) {
+            if (actionData.RequiresInRange() && target.ToString() != "null") {
                 var agentState = worldState[agent];
                 var currentPosition = new Vector2((int)agentState["x"].value, (int)agentState["y"].value);
                 var obj = target as Component;
