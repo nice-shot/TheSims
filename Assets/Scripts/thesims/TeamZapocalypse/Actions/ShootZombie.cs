@@ -31,10 +31,10 @@ public class ShootZombie : GoapAction {
         var backpack = agent.GetComponent<Container>();
         var bullet = (GameObject)Instantiate(
             bulletPrefab,
-            gameObject.transform
+            agent.transform
         );
 
-        bullet.transform.position = gameObject.transform.position;
+        bullet.transform.position = agent.transform.position;
         var target = context.target as Component;
         Vector2 relativeVec = target.transform.position - agent.transform.position;
 
