@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel: 0
+  ammo: 0
 --- !u!114 &114738209699333600
 MonoBehaviour:
   m_ObjectHideFlags: 1

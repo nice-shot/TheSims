@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58145736880869882}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPlan: []
   availableActions:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 114355848889691718, guid: 971e0b1bda782c242854b3b72e279335, type: 2}
+  - {fileID: 114441135198502876, guid: 971e0b1bda782c242854b3b72e279335, type: 2}
   regressiveSearch: 0
   backpack: {fileID: 114778074094399206}
   moveSpeed: 1
@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuel: 0
+  ammo: 0
 --- !u!212 &212101807433778180
 SpriteRenderer:
   m_ObjectHideFlags: 1
