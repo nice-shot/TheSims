@@ -5,7 +5,8 @@ using Infra.Utils;
 namespace TeamZapocalypse {
 public enum Item {
     None,
-    Fuel
+    Fuel,
+    Ammo
 }
 
 /// <summary>
@@ -17,11 +18,14 @@ public class Container : MonoBehaviour {
     //       tool separately. One goal per tool.
     // TODO: Allow changing the priorities of the blacksmith's goals.
     public Dictionary<Item, int> items = new Dictionary<Item, int> {
-        {Item.Fuel, 0}
+        {Item.Fuel, 0},
+        {Item.Ammo, 0}
     };
 
     [SerializeField]
     protected int fuel;
+    [SerializeField]
+    protected int ammo;
 
     protected void Awake() {
         // Make sure all new items are defined in the container.
@@ -30,11 +34,13 @@ public class Container : MonoBehaviour {
             items[item] = 0;
         }
         items[Item.Fuel] = fuel;
+        items[Item.Ammo] = ammo;
     }
 
     #if DEBUG_CONTAINER
     protected void Update() {
         fuel = items[Item.Fuel];
+        ammo = items[Item.Ammo];
     }
     #endif
 }
