@@ -47,7 +47,7 @@ Ideas we didn't have time to implement:
 - Have limited ammunition in the shelter which the scavenger needs to bring as
   well.
 - Have a gate mechanic in the shelter so instead of just moving to the shielded
-  shelter, characters needed to open a gate which will take time and may cause
+  shelter, characters need to open a gate which will take time and may cause
   zombies to barge in.
 - Make a bigger and more complex map with multiple shelters and perhapse a
   possible escape.
@@ -56,6 +56,11 @@ Ideas we didn't have time to implement:
 - Add food as a resource that characters need to eat to survive.
 - If we had a bigger map, perhapse the player will meet additional characters
   on the way and could join their group or ask them to join his.
+- Add depression meter (à la Hopeless) so when more survivors die the remaining
+  ones might succumb to despair and try to flee or commit suicide. Imagine
+  shooting zombies infront of someone that keeps trying to run to them.
+- If there's an escape option (and you don't just try to survive as long as
+  possible) then you get a better score if more people escape with you.
 - Additional character ideas:
   - Leader - gives the different people assignments and is in charge of
     rationing ammo, fuel and food. Stays in the shelter.
