@@ -1102,6 +1102,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 58879743003602272, guid: 5d755a3e2ad1e31468cbc41c80386ee6,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d755a3e2ad1e31468cbc41c80386ee6, type: 2}
   m_IsPrefabParent: 0
@@ -1158,6 +1163,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 58145736880869882, guid: a970d4d5b09108046b887cd6eafd4ebc,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a970d4d5b09108046b887cd6eafd4ebc, type: 2}
   m_IsPrefabParent: 0
@@ -1210,9 +1220,37 @@ Prefab:
       propertyPath: shieldEnergyText
       value: 
       objectReference: {fileID: 1395828853}
+    - target: {fileID: 1582841107130624, guid: b3b7533c7e8b4064cb4bdf0abcf573e8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114874265268553752, guid: b3b7533c7e8b4064cb4bdf0abcf573e8,
+        type: 2}
+      propertyPath: shieldEnergy
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3b7533c7e8b4064cb4bdf0abcf573e8, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1675185854 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1582841107130624, guid: b3b7533c7e8b4064cb4bdf0abcf573e8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1675185853}
+--- !u!61 &1675185855
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1675185854}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.0035998821, y: -0.00000011920929}
+  serializedVersion: 2
+  m_Size: {x: 1.3095853, y: 1.2879865}
 --- !u!4 &1711784803 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4893282457823488, guid: 674bf8e5f1cecdf4b9c4a0f954e9bded,

@@ -27,6 +27,7 @@ public class Zombie : Character {
                 Debug.Log("<color=green>Zombie died...</color>");
                 Destroy(gameObject);
             }
+            gotAbort = true;
         }
     }
 }

@@ -24,11 +24,20 @@ public abstract class GoapAgent : MonoBehaviour, IStateful, ISearchContext {
     private FSM stateMachine = new FSM();
     private Queue<ITransition> currentActions = new Queue<ITransition>();
 
+    // Used to stop a task midway
+    protected bool gotAbort = false;
+
     protected virtual void Awake() {
         stateMachine.PushState(IdleState);
     }
 
     protected virtual void Update() {
+        if (gotAbort) {
+            gotAbort = false;
+            stateMachine.PopState();
+            stateMachine.PopState();
+            stateMachine.PushState(IdleState);
+        }
         stateMachine.Update();
     }
 
