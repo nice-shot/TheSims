@@ -439,6 +439,10 @@ Prefab:
       propertyPath: cost
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1414777145781860, guid: 971e0b1bda782c242854b3b72e279335, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 971e0b1bda782c242854b3b72e279335, type: 2}
   m_IsPrefabParent: 0
@@ -1344,6 +1348,11 @@ Prefab:
         type: 2}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274513961793260, guid: a970d4d5b09108046b887cd6eafd4ebc,
+        type: 2}
+      propertyPath: increaseSpeedSecondsDiff
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a970d4d5b09108046b887cd6eafd4ebc, type: 2}

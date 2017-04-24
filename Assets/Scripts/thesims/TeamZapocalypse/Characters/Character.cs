@@ -12,7 +12,7 @@ namespace TeamZapocalypse {
 /// </summary>
 public abstract class Character : GoapAgent {
     [SerializeField] Container backpack;
-    [SerializeField] float moveSpeed = 1;
+    [SerializeField] protected float moveSpeed = 1;
     [SerializeField] TextBubble textBubble;
 
     public bool isAlive;
