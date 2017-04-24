@@ -6,6 +6,7 @@ namespace TeamZapocalypse {
 public class ZombieSpawner : MonoBehaviour {
     // Actually not a prefab - need an inactive zombie from the game scene
     public GameObject zombiePrefab;
+    public int zombieIncreaseSize = 2;
     private int hordeSize = 0;
 
 	// Use this for initialization
@@ -17,8 +18,7 @@ public class ZombieSpawner : MonoBehaviour {
 	void Update () {
         int numOfZombies = GameObject.FindGameObjectsWithTag("Zombie").Length;
         if (numOfZombies == 0) {
-            hordeSize++;
-            Debug.Log("Horde size: " + hordeSize);
+            hordeSize += zombieIncreaseSize;
             SummonZombies(hordeSize);
         }
 	}

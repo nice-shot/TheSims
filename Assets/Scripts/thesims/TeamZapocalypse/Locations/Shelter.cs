@@ -10,8 +10,8 @@ public class Shelter : MonoBehaviour, IStateful {
     public GameObject shield;
 
     private readonly State state = new State(); 
-    private const float energyDeplitionRate = 0.2f;
-    private const float energyFromFuel = 10;
+    private const float energyDeplitionRate = 0.4f;
+    private const float energyFromFuel = 8;
     private const float maxEnergy = 100;
 
     protected void Awake() {
