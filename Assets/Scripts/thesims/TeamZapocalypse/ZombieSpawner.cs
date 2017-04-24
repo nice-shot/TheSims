@@ -17,6 +17,7 @@ public class ZombieSpawner : MonoBehaviour {
         int numOfZombies = GameObject.FindGameObjectsWithTag("Zombie").Length;
         if (numOfZombies == 0) {
             hordeSize++;
+            Debug.Log("Horde size: " + hordeSize);
             SummonZombies(hordeSize);
         }
 	}
@@ -24,8 +25,10 @@ public class ZombieSpawner : MonoBehaviour {
     void SummonZombies(int numberOfZombies) {
         Transform[] spawnTransforms = GetComponentsInChildren<Transform>();
         for (int i=0; i<numberOfZombies; i++) {
-            Transform chosenTransform = spawnTransforms[Random.Range(0, spawnTransforms.Length)];
+            // The first transform position will be the script which is (0,0,0)
+            Transform chosenTransform = spawnTransforms[Random.Range(1, spawnTransforms.Length)];
             GameObject zombie = (GameObject)Instantiate(zombiePrefab);
+            zombie.SetActive(true);
             var pos = chosenTransform.position;
             // Z position for characters is always -2
             zombie.transform.position = new Vector3(pos.x, pos.y, -2);

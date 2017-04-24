@@ -178,6 +178,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 786729416}
   m_Script: {fileID: 11500000, guid: 15c94455c4c931049a7a83d9a208382c, type: 3}
+--- !u!1 &295844026 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1136377139927952, guid: a970d4d5b09108046b887cd6eafd4ebc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1618969440}
 --- !u!4 &323030597 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4328726612630718, guid: 5d755a3e2ad1e31468cbc41c80386ee6,
@@ -933,8 +938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649404300c7d46cc858fda608fa289f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombiePrefab: {fileID: 1136377139927952, guid: a970d4d5b09108046b887cd6eafd4ebc,
-    type: 2}
+  zombiePrefab: {fileID: 295844026}
 --- !u!1001 &1557117737
 Prefab:
   m_ObjectHideFlags: 0
@@ -1028,7 +1032,7 @@ Prefab:
       objectReference: {fileID: 1112694792}
     - target: {fileID: 1136377139927952, guid: a970d4d5b09108046b887cd6eafd4ebc, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a970d4d5b09108046b887cd6eafd4ebc, type: 2}
