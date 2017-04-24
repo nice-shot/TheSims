@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace TeamZapocalypse {
 public class ZombieSpawner : MonoBehaviour {
+    // Actually not a prefab - need an inactive zombie from the game scene
     public GameObject zombiePrefab;
     private int hordeSize = 0;
 
