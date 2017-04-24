@@ -18,6 +18,9 @@ Zombie
 His goal is just to move and he can do that by either wandering around or
 eating brains. Eating brains has higher priority but is not always possible.
 
+Over time the zombie will gain speed. Different zombies will increase their
+speed in a different way.
+
 Scavenger
 ---------
 His goal is the keep the shield in the shelter up. He scavenges for fuel in the
@@ -34,6 +37,8 @@ We've added a few changes to the Goap scripts:
   zombies try to approach people in the shelter.
 - We also added a custom move for the Defender agent so he'll be able to shoot
   zombies from a distance.
+- We've added the option to abort an action by the agent - used when zombies
+  are shot so they'll stop wandering around.
 
 Ideas we didn't have time to implement:
 - Having limited fuel stock at the gas station and putting more stations
@@ -42,8 +47,6 @@ Ideas we didn't have time to implement:
   fuel and too many zombies outside.
 - Having zombies interact better with the shelter and shield:
   - They shouldn't immediatly stop moving when their target is safe
-  - They shoudln't be able to move through the shield (we need to play with
-    colliders a bit...)
 - Have limited ammunition in the shelter which the scavenger needs to bring as
   well.
 - Have a gate mechanic in the shelter so instead of just moving to the shielded
@@ -51,7 +54,7 @@ Ideas we didn't have time to implement:
   zombies to barge in.
 - Make a bigger and more complex map with multiple shelters and perhapse a
   possible escape.
-- Zombie doesn't instantly kill but hurts and grabs the victim. The player and
+- Zombies don't instantly kill but hurt and grab the victim. The player and
   Defender agent might be able to save someone during that time.
 - Add food as a resource that characters need to eat to survive.
 - If we had a bigger map, perhapse the player will meet additional characters
